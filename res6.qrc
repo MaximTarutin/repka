@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res6/fon.jpg</file>
+        <file>res6/cat.png</file>
+        <file>res6/plitka.jpg</file>
+        <file>res6/babka.png</file>
+        <file>res6/dedka.png</file>
+        <file>res6/vnuchka.png</file>
+        <file>res6/zuchka.png</file>
+        <file>res6/koshka.png</file>
+        <file>res6/myshka.png</file>
+        <file>res6/repka.png</file>
+        <file>res6/tomat.png</file>
+        <file>res6/giphy.gif</file>
+    </qresource>
+</RCC>

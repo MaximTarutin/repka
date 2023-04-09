@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res7/01.png</file>
+        <file>res7/02.png</file>
+        <file>res7/03.png</file>
+        <file>res7/04.png</file>
+        <file>res7/05.png</file>
+        <file>res7/06.png</file>
+        <file>res7/07.png</file>
+        <file>res7/08.png</file>
+        <file>res7/09.png</file>
+        <file>res7/10.png</file>
+        <file>res7/11.png</file>
+        <file>res7/12.png</file>
+        <file>res7/13.png</file>
+        <file>res7/14.png</file>
+        <file>res7/15.png</file>
+        <file>res7/16.png</file>
+        <file>res7/put.png</file>
+        <file>res7/syr.png</file>
+        <file>res7/dvor.jpg</file>
+        <file>res7/myshka.png</file>
+        <file>res7/ura1.gif</file>
+    </qresource>
+</RCC>

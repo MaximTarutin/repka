@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res3/level_3.jpg</file>
+        <file>res3/stol.png</file>
+        <file>res3/babka.png</file>
+        <file>res3/egs.png</file>
+        <file>res3/kolobok.png</file>
+        <file>res3/milk.png</file>
+        <file>res3/muka.png</file>
+        <file>res3/oil.png</file>
+        <file>res3/sol.png</file>
+        <file>res3/tazik-01.png</file>
+        <file>res3/tazik-02.png</file>
+        <file>res3/tazik-03.png</file>
+        <file>res3/tazik-04.png</file>
+        <file>res3/tazik-05.png</file>
+        <file>res3/tazik-06.png</file>
+        <file>res3/venchik.png</file>
+        <file>res3/pechka.png</file>
+    </qresource>
+</RCC>

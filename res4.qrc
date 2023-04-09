@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res4/fon.jpg</file>
+        <file>res4/grib.png</file>
+        <file>res4/korzina.png</file>
+        <file>res4/lico.png</file>
+        <file>res4/platie.png</file>
+        <file>res4/platok.png</file>
+        <file>res4/sapogi.png</file>
+        <file>res4/vnuchka-1.png</file>
+        <file>res4/vnuchka-2.png</file>
+        <file>res4/vnuchka-3.png</file>
+        <file>res4/volosy.png</file>
+        <file>res4/vnuchka.png</file>
+        <file>res4/vnuchka-111.png</file>
+        <file>res4/vnuchka-7.png</file>
+        <file>res4/vnuchka-6.png</file>
+        <file>res4/vnuchka-5.png</file>
+        <file>res4/vnuchka-4.png</file>
+        <file>res4/holst.png</file>
+        <file>res4/karandash-1.png</file>
+        <file>res4/karandash-2.png</file>
+        <file>res4/karandash-3.png</file>
+        <file>res4/karandash-4.png</file>
+        <file>res4/karandash-5.png</file>
+        <file>res4/karandash-6.png</file>
+        <file>res4/karandash-7.png</file>
+        <file>res4/karandash.png</file>
+        <file>res4/confetti-12.gif</file>
+    </qresource>
+</RCC>

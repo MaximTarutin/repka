@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res5/cyan.png</file>
+        <file>res5/dog.jpg</file>
+        <file>res5/dvor.jpeg</file>
+        <file>res5/kadr-1.png</file>
+        <file>res5/kadr-2.png</file>
+        <file>res5/kadr-3.png</file>
+        <file>res5/kadr-4.png</file>
+        <file>res5/kadr-5.png</file>
+        <file>res5/kadr-6.png</file>
+        <file>res5/kadr-7.png</file>
+        <file>res5/kadr-8.png</file>
+        <file>res5/kadr-9.png</file>
+        <file>res5/zuchka.png</file>
+        <file>res5/viktory.gif</file>
+    </qresource>
+</RCC>

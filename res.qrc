@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/babka.png</file>
+        <file>res/dedka.png</file>
+        <file>res/dom-fon.jpg</file>
+        <file>res/koshka.png</file>
+        <file>res/myshka.png</file>
+        <file>res/repka-fon.jpg</file>
+        <file>res/repka.png</file>
+        <file>res/vnuchka.png</file>
+        <file>res/zuchka.png</file>
+        <file>res/exit2.png</file>
+        <file>res/start.png</file>
+        <file>res/return.png</file>
+        <file>res/chesnok-gray.png</file>
+        <file>res/grusha-gray.png</file>
+        <file>res/kartoshka-gray.png</file>
+        <file>res/morkovka-gray.png</file>
+        <file>res/ogurec-gray.png</file>
+        <file>res/rediska-gray.png</file>
+        <file>res/repka-gray.png</file>
+        <file>res/tykva-gray.png</file>
+        <file>res/chesnok.png</file>
+        <file>res/grusha.png</file>
+        <file>res/kartoshka.png</file>
+        <file>res/morkovka.png</file>
+        <file>res/ogurec.png</file>
+        <file>res/rediska.png</file>
+        <file>res/tykva.png</file>
+        <file>res/tomat-gray.png</file>
+        <file>res/tomat.png</file>
+        <file>res/ruka.png</file>
+        <file>res/next.png</file>
+        <file>res/theend.png</file>
+        <file>res/repa.png</file>
+        <file>res/repa.ico</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res1/fon.mp3</file>
+        <file>res1/nea.wav</file>
+        <file>res1/yes.mp3</file>
+        <file>res1/viktory.wav</file>
+        <file>res1/repka.wav</file>
+        <file>res1/salut.mp3</file>
+        <file>res1/tuk.mp3</file>
+        <file>res1/show.mp3</file>
+        <file>res1/ura.mp3</file>
+        <file>res1/lay.mp3</file>
+        <file>res1/bah.mp3</file>
+        <file>res1/tada.wav</file>
+    </qresource>
+</RCC>

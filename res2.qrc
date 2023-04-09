@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res2/level_2.jpg</file>
+        <file>res2/fomka.png</file>
+        <file>res2/leyka.png</file>
+        <file>res2/lopata.png</file>
+        <file>res2/molotok.png</file>
+        <file>res2/serp.png</file>
+        <file>res2/topor.png</file>
+        <file>res2/vedro.png</file>
+        <file>res2/vily.png</file>
+        <file>res2/fon.png</file>
+        <file>res2/dedka.png</file>
+        <file>res2/mysl.png</file>
+        <file>res2/salut.gif</file>
+        <file>res2/repa.png</file>
+    </qresource>
+</RCC>
