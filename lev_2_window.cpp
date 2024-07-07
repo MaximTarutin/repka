@@ -1,4 +1,6 @@
 #include "lev_2_window.h"
+#include <ctime>
+#include "global.h"
 
 Lev_2_Window::Lev_2_Window(QWidget *parent) : QMainWindow(parent)
 {

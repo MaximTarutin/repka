@@ -425,18 +425,12 @@ void MapWindow::help_level()
     y  = Tykva->y()+Tykva->height()/2;
     y1 = Gray_Tykva->y()+Gray_Tykva->height()/2;
 
-    if(x==x1)
-    {
-        hand_x = hand_x;
-    } else
+    if(x!=x1)
     {
         hand_x--;
     }
 
-    if(hand_y==y1)
-    {
-        hand_y = hand_y;
-    } else
+    if(hand_y!=y1)
     {
         hand_y++;
     }

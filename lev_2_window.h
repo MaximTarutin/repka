@@ -13,8 +13,6 @@
 #include <QUrl>
 #include <QMovie>
 #include "static_object.h"
-#include <ctime>
-#include "global.h"
 
 class Lev_2_Window : public QMainWindow
 {
