@@ -19,7 +19,7 @@
 #include "lev_5_window.h"
 #include "lev_6_window.h"
 #include "lev_7_window.h"
-#include "global.h"
+
 
 class MapWindow : public QMainWindow
 {

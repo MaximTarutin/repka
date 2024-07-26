@@ -38,22 +38,21 @@ Lev_5_Window::Lev_5_Window(QWidget *parent) : QMainWindow(parent)
     Mysl_1  = new Static_Object(":/res5/dog.jpg", 200, 200, Mysl);
     Mysl_1->move(190,140);
 
-    Pazl    = new Static_Object[10];
-    Pazl[0].pic_obj(":/res5/kadr-1.png");
-    Pazl[1].pic_obj(":/res5/kadr-1.png");
-    Pazl[2].pic_obj(":/res5/kadr-2.png");
-    Pazl[3].pic_obj(":/res5/kadr-3.png");
-    Pazl[4].pic_obj(":/res5/kadr-4.png");
-    Pazl[5].pic_obj(":/res5/kadr-5.png");
-    Pazl[6].pic_obj(":/res5/kadr-6.png");
-    Pazl[7].pic_obj(":/res5/kadr-7.png");
-    Pazl[8].pic_obj(":/res5/kadr-8.png");
-    Pazl[9].pic_obj(":/res5/kadr-9.png");
+    Pazl[0] = new Static_Object(":/res5/kadr-1.png", 200, 200, this);
+    Pazl[1] = new Static_Object(":/res5/kadr-1.png", 200, 200, this);
+    Pazl[2] = new Static_Object(":/res5/kadr-2.png", 200, 200, this);
+    Pazl[3] = new Static_Object(":/res5/kadr-3.png", 200, 200, this);
+    Pazl[4] = new Static_Object(":/res5/kadr-4.png", 200, 200, this);
+    Pazl[5] = new Static_Object(":/res5/kadr-5.png", 200, 200, this);
+    Pazl[6] = new Static_Object(":/res5/kadr-6.png", 200, 200, this);
+    Pazl[7] = new Static_Object(":/res5/kadr-7.png", 200, 200, this);
+    Pazl[8] = new Static_Object(":/res5/kadr-8.png", 200, 200, this);
+    Pazl[9] = new Static_Object(":/res5/kadr-9.png", 200, 200, this);
 
     for(int i=0; i<10; ++i)
     {
-        Pazl[i].setParent(this);
-        Pazl[i].resize_obj(200, 200);
+        Pazl[i]->setParent(this);
+        Pazl[i]->resize_obj(200, 200);
         FLAG_PAZZLE[i] = true;
     }
 
@@ -78,7 +77,7 @@ Lev_5_Window::Lev_5_Window(QWidget *parent) : QMainWindow(parent)
 
     Hand->show();
     Hand->raise();
-    Hand->move(Pazl[1].x()+100+Hand->width(), Pazl[1].y()+100);
+    Hand->move(Pazl[1]->x()+100+Hand->width(), Pazl[1]->y()+100);
     timer_help->start(4);
 
     connect(Button_Return,      &QPushButton::clicked,      this,   &Lev_5_Window::return_to_mainwindow);       // нажимаем кнопку назад
@@ -89,7 +88,7 @@ Lev_5_Window::Lev_5_Window(QWidget *parent) : QMainWindow(parent)
 Lev_5_Window::~Lev_5_Window()
 {
     delete Background;
-    delete [] Pazl;
+    for(int i=0; i<10; ++i) delete Pazl[i];
     delete Mysl;
     delete Mysl_1;
     delete Area_Puzzle;
@@ -144,63 +143,63 @@ void Lev_5_Window::init()
                 {
                 case 1: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50;
                         y[i] = 20; break;
-                case 2: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50+Pazl[i].width()+50;
+                case 2: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50+Pazl[i]->width()+50;
                         y[i] = 20; break;
                 case 3: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50;
-                        y[i] = 40+Pazl[i].height(); break;
-                case 4: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50+Pazl[i].width()+50;
-                        y[i] = 40+Pazl[i].height(); break;
+                        y[i] = 40+Pazl[i]->height(); break;
+                case 4: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50+Pazl[i]->width()+50;
+                        y[i] = 40+Pazl[i]->height(); break;
                 case 5: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50;
-                        y[i] = 60+Pazl[i].height()*2; break;
-                case 6: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50+Pazl[i].width()+50;
-                        y[i] = 60+Pazl[i].height()*2; break;
+                        y[i] = 60+Pazl[i]->height()*2; break;
+                case 6: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50+Pazl[i]->width()+50;
+                        y[i] = 60+Pazl[i]->height()*2; break;
                 case 7: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50;
-                        y[i] = 80+Pazl[i].height()*3; break;
-                case 8: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50+Pazl[i].width()+50;
-                        y[i] = 80+Pazl[i].height()*3; break;
+                        y[i] = 80+Pazl[i]->height()*3; break;
+                case 8: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50+Pazl[i]->width()+50;
+                        y[i] = 80+Pazl[i]->height()*3; break;
                 case 9: x[i] = Area_Puzzle->x()+Area_Puzzle->width()+50;
-                        y[i] = 100+Pazl[i].height()*4; break;
+                        y[i] = 100+Pazl[i]->height()*4; break;
                 }
-                    Pazl[0].hide();
-                    Pazl[i].move(x[i], y[i]);       // размещаем объект со случайными координатами
-                    Pazl[i].show();
+                    Pazl[0]->hide();
+                    Pazl[i]->move(x[i], y[i]);       // размещаем объект со случайными координатами
+                    Pazl[i]->show();
                     ++i;
                 }
             }
     }
-    old_x1 = Pazl[1].x()+100+Hand->width(); old_y1 = Pazl[1].y()+100;
+    old_x1 = Pazl[1]->x()+100+Hand->width(); old_y1 = Pazl[1]->y()+100;
 }
 
 //-------------------------------------- События при нажатии кнопки мышки ------------------------------
 
 void Lev_5_Window::mousePressEvent(QMouseEvent *pe)
 {
-    if((pe->x()>Pazl[1].x())&&(pe->x()<Pazl[1].x()+Pazl[1].width())&&
-       (pe->y()>Pazl[1].y())&&(pe->y()<Pazl[1].y()+Pazl[1].height())&&
+    if((pe->x()>Pazl[1]->x())&&(pe->x()<Pazl[1]->x()+Pazl[1]->width())&&
+       (pe->y()>Pazl[1]->y())&&(pe->y()<Pazl[1]->y()+Pazl[1]->height())&&
        (FLAG_PAZZLE[1])) number_pazzle = 1;
-    if((pe->x()>Pazl[2].x())&&(pe->x()<Pazl[2].x()+Pazl[2].width())&&
-       (pe->y()>Pazl[2].y())&&(pe->y()<Pazl[2].y()+Pazl[2].height())&&
+    if((pe->x()>Pazl[2]->x())&&(pe->x()<Pazl[2]->x()+Pazl[2]->width())&&
+       (pe->y()>Pazl[2]->y())&&(pe->y()<Pazl[2]->y()+Pazl[2]->height())&&
        (FLAG_PAZZLE[2])) number_pazzle = 2;
-    if((pe->x()>Pazl[3].x())&&(pe->x()<Pazl[3].x()+Pazl[3].width())&&
-       (pe->y()>Pazl[3].y())&&(pe->y()<Pazl[3].y()+Pazl[3].height())&&
+    if((pe->x()>Pazl[3]->x())&&(pe->x()<Pazl[3]->x()+Pazl[3]->width())&&
+       (pe->y()>Pazl[3]->y())&&(pe->y()<Pazl[3]->y()+Pazl[3]->height())&&
        (FLAG_PAZZLE[3])) number_pazzle = 3;
-    if((pe->x()>Pazl[4].x())&&(pe->x()<Pazl[4].x()+Pazl[4].width())&&
-       (pe->y()>Pazl[4].y())&&(pe->y()<Pazl[4].y()+Pazl[4].height())&&
+    if((pe->x()>Pazl[4]->x())&&(pe->x()<Pazl[4]->x()+Pazl[4]->width())&&
+       (pe->y()>Pazl[4]->y())&&(pe->y()<Pazl[4]->y()+Pazl[4]->height())&&
        (FLAG_PAZZLE[4])) number_pazzle = 4;
-    if((pe->x()>Pazl[5].x())&&(pe->x()<Pazl[5].x()+Pazl[5].width())&&
-       (pe->y()>Pazl[5].y())&&(pe->y()<Pazl[5].y()+Pazl[5].height())&&
+    if((pe->x()>Pazl[5]->x())&&(pe->x()<Pazl[5]->x()+Pazl[5]->width())&&
+       (pe->y()>Pazl[5]->y())&&(pe->y()<Pazl[5]->y()+Pazl[5]->height())&&
        (FLAG_PAZZLE[5])) number_pazzle = 5;
-    if((pe->x()>Pazl[6].x())&&(pe->x()<Pazl[6].x()+Pazl[6].width())&&
-       (pe->y()>Pazl[6].y())&&(pe->y()<Pazl[6].y()+Pazl[6].height())&&
+    if((pe->x()>Pazl[6]->x())&&(pe->x()<Pazl[6]->x()+Pazl[6]->width())&&
+       (pe->y()>Pazl[6]->y())&&(pe->y()<Pazl[6]->y()+Pazl[6]->height())&&
        (FLAG_PAZZLE[6])) number_pazzle = 6;
-    if((pe->x()>Pazl[7].x())&&(pe->x()<Pazl[7].x()+Pazl[7].width())&&
-       (pe->y()>Pazl[7].y())&&(pe->y()<Pazl[7].y()+Pazl[7].height())&&
+    if((pe->x()>Pazl[7]->x())&&(pe->x()<Pazl[7]->x()+Pazl[7]->width())&&
+       (pe->y()>Pazl[7]->y())&&(pe->y()<Pazl[7]->y()+Pazl[7]->height())&&
        (FLAG_PAZZLE[7])) number_pazzle = 7;
-    if((pe->x()>Pazl[8].x())&&(pe->x()<Pazl[8].x()+Pazl[8].width())&&
-       (pe->y()>Pazl[8].y())&&(pe->y()<Pazl[8].y()+Pazl[8].height())&&
+    if((pe->x()>Pazl[8]->x())&&(pe->x()<Pazl[8]->x()+Pazl[8]->width())&&
+       (pe->y()>Pazl[8]->y())&&(pe->y()<Pazl[8]->y()+Pazl[8]->height())&&
        (FLAG_PAZZLE[8])) number_pazzle = 8;
-    if((pe->x()>Pazl[9].x())&&(pe->x()<Pazl[9].x()+Pazl[9].width())&&
-       (pe->y()>Pazl[9].y())&&(pe->y()<Pazl[9].y()+Pazl[9].height())&&
+    if((pe->x()>Pazl[9]->x())&&(pe->x()<Pazl[9]->x()+Pazl[9]->width())&&
+       (pe->y()>Pazl[9]->y())&&(pe->y()<Pazl[9]->y()+Pazl[9]->height())&&
        (FLAG_PAZZLE[9])) number_pazzle = 9;
 
     timer_help->stop();
@@ -214,7 +213,7 @@ void Lev_5_Window::mouseReleaseEvent(QMouseEvent *pe)
     if((number_pazzle == 1)&&(pe->x()>Area_Puzzle->x())&&(pe->x()<Area_Puzzle->x()+200)&&
        (pe->y()>Area_Puzzle->y())&&(pe->y()<Area_Puzzle->y()+200))
     {
-        Pazl[1].move(Area_Puzzle->x(), Area_Puzzle->y());
+        Pazl[1]->move(Area_Puzzle->x(), Area_Puzzle->y());
         yes->setVolume(100);
         yes->play();
         FLAG_PAZZLE[1] = false;
@@ -222,7 +221,7 @@ void Lev_5_Window::mouseReleaseEvent(QMouseEvent *pe)
     if((number_pazzle == 2)&&(pe->x()>Area_Puzzle->x()+200)&&(pe->x()<Area_Puzzle->x()+400)&&
        (pe->y()>Area_Puzzle->y())&&(pe->y()<Area_Puzzle->y()+200))
     {
-        Pazl[2].move(Area_Puzzle->x()+200, Area_Puzzle->y());
+        Pazl[2]->move(Area_Puzzle->x()+200, Area_Puzzle->y());
         yes->setVolume(100);
         yes->play();
         FLAG_PAZZLE[2] = false;
@@ -230,7 +229,7 @@ void Lev_5_Window::mouseReleaseEvent(QMouseEvent *pe)
     if((number_pazzle == 3)&&(pe->x()>Area_Puzzle->x()+400)&&(pe->x()<Area_Puzzle->x()+600)&&
        (pe->y()>Area_Puzzle->y())&&(pe->y()<Area_Puzzle->y()+200))
     {
-        Pazl[3].move(Area_Puzzle->x()+400, Area_Puzzle->y());
+        Pazl[3]->move(Area_Puzzle->x()+400, Area_Puzzle->y());
         yes->setVolume(100);
         yes->play();
         FLAG_PAZZLE[3] = false;
@@ -238,7 +237,7 @@ void Lev_5_Window::mouseReleaseEvent(QMouseEvent *pe)
     if((number_pazzle == 4)&&(pe->x()>Area_Puzzle->x())&&(pe->x()<Area_Puzzle->x()+200)&&
        (pe->y()>Area_Puzzle->y()+200)&&(pe->y()<Area_Puzzle->y()+400))
     {
-        Pazl[4].move(Area_Puzzle->x(), Area_Puzzle->y()+200);
+        Pazl[4]->move(Area_Puzzle->x(), Area_Puzzle->y()+200);
         yes->setVolume(100);
         yes->play();
         FLAG_PAZZLE[4] = false;
@@ -246,7 +245,7 @@ void Lev_5_Window::mouseReleaseEvent(QMouseEvent *pe)
     if((number_pazzle == 5)&&(pe->x()>Area_Puzzle->x()+200)&&(pe->x()<Area_Puzzle->x()+400)&&
        (pe->y()>Area_Puzzle->y()+200)&&(pe->y()<Area_Puzzle->y()+400))
     {
-        Pazl[5].move(Area_Puzzle->x()+200, Area_Puzzle->y()+200);
+        Pazl[5]->move(Area_Puzzle->x()+200, Area_Puzzle->y()+200);
         yes->setVolume(100);
         yes->play();
         FLAG_PAZZLE[5] = false;
@@ -254,7 +253,7 @@ void Lev_5_Window::mouseReleaseEvent(QMouseEvent *pe)
     if((number_pazzle == 6)&&(pe->x()>Area_Puzzle->x()+400)&&(pe->x()<Area_Puzzle->x()+600)&&
        (pe->y()>Area_Puzzle->y()+200)&&(pe->y()<Area_Puzzle->y()+400))
     {
-        Pazl[6].move(Area_Puzzle->x()+400, Area_Puzzle->y()+200);
+        Pazl[6]->move(Area_Puzzle->x()+400, Area_Puzzle->y()+200);
         yes->setVolume(100);
         yes->play();
         FLAG_PAZZLE[6] = false;
@@ -262,7 +261,7 @@ void Lev_5_Window::mouseReleaseEvent(QMouseEvent *pe)
     if((number_pazzle == 7)&&(pe->x()>Area_Puzzle->x())&&(pe->x()<Area_Puzzle->x()+200)&&
        (pe->y()>Area_Puzzle->y()+400)&&(pe->y()<Area_Puzzle->y()+600))
     {
-        Pazl[7].move(Area_Puzzle->x(), Area_Puzzle->y()+400);
+        Pazl[7]->move(Area_Puzzle->x(), Area_Puzzle->y()+400);
         yes->setVolume(100);
         yes->play();
         FLAG_PAZZLE[7] = false;
@@ -270,7 +269,7 @@ void Lev_5_Window::mouseReleaseEvent(QMouseEvent *pe)
     if((number_pazzle == 8)&&(pe->x()>Area_Puzzle->x()+200)&&(pe->x()<Area_Puzzle->x()+400)&&
        (pe->y()>Area_Puzzle->y()+400)&&(pe->y()<Area_Puzzle->y()+600))
     {
-        Pazl[8].move(Area_Puzzle->x()+200, Area_Puzzle->y()+400);
+        Pazl[8]->move(Area_Puzzle->x()+200, Area_Puzzle->y()+400);
         yes->setVolume(100);
         yes->play();
         FLAG_PAZZLE[8] = false;
@@ -278,7 +277,7 @@ void Lev_5_Window::mouseReleaseEvent(QMouseEvent *pe)
     if((number_pazzle == 9)&&(pe->x()>Area_Puzzle->x()+400)&&(pe->x()<Area_Puzzle->x()+600)&&
        (pe->y()>Area_Puzzle->y()+400)&&(pe->y()<Area_Puzzle->y()+600))
     {
-        Pazl[9].move(Area_Puzzle->x()+400, Area_Puzzle->y()+400);
+        Pazl[9]->move(Area_Puzzle->x()+400, Area_Puzzle->y()+400);
         yes->setVolume(100);
         yes->play();
         FLAG_PAZZLE[9] = false;
@@ -303,8 +302,8 @@ void Lev_5_Window::mouseMoveEvent(QMouseEvent *pe)
 {
     if(FLAG_PAZZLE[number_pazzle])
     {
-        Pazl[number_pazzle].move(pe->x()-100, pe->y()-100);
-        Pazl[number_pazzle].raise();
+        Pazl[number_pazzle]->move(pe->x()-100, pe->y()-100);
+        Pazl[number_pazzle]->raise();
     }
 }
 
@@ -327,7 +326,7 @@ void Lev_5_Window::viktory()
         lay->stop();
         level++;
 
-        delete [] Pazl;
+        for(int i=0; i<10; ++i) delete Pazl[i];
         delete Mysl_1;
         delete Mysl;
         delete Area_Puzzle;
@@ -336,8 +335,6 @@ void Lev_5_Window::viktory()
         delete yes;
         delete Hand;
         delete timer_help;
-        delete viktory_timer;
-        //delete lay;
         delete Smile;
         delete movie;
         delete Background;
@@ -353,8 +350,8 @@ void Lev_5_Window::help_game()
     static int hand_x1, hand_y1;            // счетчики
     int x, x1, y, y1;                       // начальные и конечные координаты руки
 
-    x = Pazl[1].x()-Hand->width()/4+hand_x1;
-    y = Pazl[1].y()+Pazl[1].height()/2+hand_y1;
+    x = Pazl[1]->x()-Hand->width()/4+hand_x1;
+    y = Pazl[1]->y()+Pazl[1]->height()/2+hand_y1;
     x1 = Area_Puzzle->x()+100;
     y1 = Area_Puzzle->y()+100;
     if(x==x1)

@@ -27,7 +27,7 @@ public:
     Static_Object           *Area_Puzzle;                                   // Область для сборки пазла
     Static_Object           *Mysl;                                          // Мысль
     Static_Object           *Mysl_1;                                        // Мысль о картине в сборе
-    Static_Object           *Pazl;                                          // Части пазла
+    Static_Object           *Pazl[10];                                      // Части пазла
     QMovie                  *movie;                                         // анимация
     QLabel                  *Smile;                                         // анимация
     QTimer                  *viktory_timer;                                 // Таймер победа

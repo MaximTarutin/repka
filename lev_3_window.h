@@ -26,9 +26,9 @@ public:
     Static_Object       *Stol;                                      // стол
     Static_Object       *Babka;                                     // Бабка
     Static_Object       *Mysl;                                      // мысль
-    Static_Object       *Produkt;                                   // массив продуктов
-    Static_Object       *Produkt_Babka;                             // продукт о котором думает бабка
-    Static_Object       *Tazik;                                     // варианты тазика
+    Static_Object       *Produkt [8];                               // массив продуктов
+    Static_Object       *Produkt_Babka [8];                             // продукт о котором думает бабка
+    Static_Object       *Tazik [5];                                 // варианты тазика
     Static_Object       *Hand;                                      // рука
     QTimer              *timer_help;                                // таймер подсказки
     QTimer              *timer_help_kolobok;                        // таймер подсказки: тесто в печку

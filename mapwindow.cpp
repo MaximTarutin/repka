@@ -1,4 +1,5 @@
 #include "mapwindow.h"
+#include "global.h"
 
 MapWindow::MapWindow(QWidget *parent) : QMainWindow(parent)
 {

@@ -39,66 +39,47 @@ Lev_3_Window::Lev_3_Window(QWidget *parent) : QMainWindow(parent)
     Mysl = new Static_Object(":/res2/mysl.png", 300, 300, this);
     Mysl->move(Babka->x()+Babka->width()/3, Babka->y()-Babka->height()/2-50);
 
-    Produkt     = new Static_Object[8];
-    Produkt[0].pic_obj(":/res3/tazik-01.png");
-    Produkt[0].resize_obj(150,150);
-    Produkt[0].move(5, desktop_height-270);
-    Produkt[1].pic_obj(":/res3/milk.png");
-    Produkt[1].resize_obj(100,100);
-    Produkt[2].pic_obj(":/res3/muka.png");                  // Инициализируем массив продуктов
-    Produkt[2].resize_obj(100,100);
-    Produkt[3].pic_obj(":/res3/egs.png");
-    Produkt[3].resize_obj(100,100);
-    Produkt[4].pic_obj(":/res3/oil.png");
-    Produkt[4].resize_obj(100,100);
-    Produkt[5].pic_obj(":/res3/sol.png");
-    Produkt[5].resize_obj(80,80);
-    Produkt[6].pic_obj(":/res3/venchik.png");
-    Produkt[6].resize_obj(100,100);
-    Produkt[7].pic_obj(":/res3/kolobok.png");
-    Produkt[7].resize_obj(0,0);
+    Produkt[0] = new Static_Object(":/res3/tazik-01.png", 150, 150, this);
+    Produkt[0]->move(5, desktop_height-270);
+    Produkt[1] = new Static_Object(":/res3/milk.png", 100, 100, this);
+    Produkt[2] = new Static_Object(":/res3/muka.png", 100, 100, this);
+    Produkt[3] = new Static_Object(":/res3/egs.png", 100, 100, this);
+    Produkt[4] = new Static_Object(":/res3/oil.png", 100, 100, this);
+    Produkt[5] = new Static_Object(":/res3/sol.png", 80, 80, this);
+    Produkt[6] = new Static_Object(":/res3/venchik.png", 100, 100, this);
+    Produkt[7] = new Static_Object(":/res3/kolobok.png", 0, 0, this);
 
-    Tazik   = new Static_Object[5];
-    Tazik[0].pic_obj(":/res3/tazik-02.png");
-    Tazik[1].pic_obj(":/res3/tazik-03.png");
-    Tazik[2].pic_obj(":/res3/tazik-04.png");                // Массив содержимого тазика
-    Tazik[3].pic_obj(":/res3/tazik-05.png");
-    Tazik[4].pic_obj(":/res3/tazik-06.png");
+    Tazik[0] = new Static_Object(":/res3/tazik-02.png",150,150,this);
+    Tazik[1] = new Static_Object(":/res3/tazik-03.png",150,150,this);
+    Tazik[2] = new Static_Object(":/res3/tazik-03.png",150,150,this);
+    Tazik[3] = new Static_Object(":/res3/tazik-04.png",150,150,this);
+    Tazik[4] = new Static_Object(":/res3/tazik-05.png",150,150,this);
 
-    Produkt_Babka   = new Static_Object[8];
-    Produkt_Babka[0].pic_obj(":/res3/tazik-01.png");
-    Produkt_Babka[0].resize_obj(150,150);
-    Produkt_Babka[0].move(Mysl->x()+Mysl->width()/4, Mysl->y()+Mysl->height()/8);
-    Produkt_Babka[1].pic_obj(":/res3/milk.png");
-    Produkt_Babka[1].resize_obj(100,100);
-    Produkt_Babka[2].pic_obj(":/res3/muka.png");
-    Produkt_Babka[2].resize_obj(100,300);
-    Produkt_Babka[3].pic_obj(":/res3/egs.png");             // Массив продуктов о которых думает бабка
-    Produkt_Babka[3].resize_obj(100,100);
-    Produkt_Babka[4].pic_obj(":/res3/oil.png");
-    Produkt_Babka[4].resize_obj(100,100);
-    Produkt_Babka[5].pic_obj(":/res3/sol.png");
-    Produkt_Babka[5].resize_obj(60,60);
-    Produkt_Babka[6].pic_obj(":/res3/venchik.png");
-    Produkt_Babka[6].resize_obj(100,100);
-    Produkt_Babka[7].pic_obj(":/res3/pechka.png");
-    Produkt_Babka[7].resize_obj(100,100);
+    Produkt_Babka[0] = new Static_Object(":/res3/tazik-01.png", 150, 150, this);
+    Produkt_Babka[0]->move(Mysl->x()+Mysl->width()/4, Mysl->y()+Mysl->height()/8);
+    Produkt_Babka[1] = new Static_Object(":/res3/milk.png", 100, 100, this);
+    Produkt_Babka[2] = new Static_Object(":/res3/muka.png", 100, 300, this);
+    Produkt_Babka[3] = new Static_Object(":/res3/egs.png", 100, 100, this);
+    Produkt_Babka[4] = new Static_Object(":/res3/oil.png", 100, 100, this);
+    Produkt_Babka[5] = new Static_Object(":/res3/sol.png", 60, 60, this);
+    Produkt_Babka[6] = new Static_Object(":/res3/venchik.png", 100, 100, this);
+    Produkt_Babka[7] = new Static_Object(":/res3/pechka.png", 100, 100, this);
 
     for(int i=0; i<8; ++i)
     {
-        Produkt[i].setParent(this);
-        Produkt_Babka[i].setParent(this);                   // инициализация объектов
-        Produkt_Babka[i].hide();
+        Produkt[i]->setParent(this);
+        Produkt_Babka[i]->setParent(this);                   // инициализация объектов
+        Produkt_Babka[i]->hide();
     }
 
     for(int i=0; i<5; ++i)
     {
-        Tazik[i].setParent(this);
-        Tazik[i].resize_obj(150,150);
-        Tazik[i].hide();
+        Tazik[i]->setParent(this);
+        Tazik[i]->resize_obj(150,150);
+        Tazik[i]->hide();
     }
 
-    Produkt_Babka[0].show();
+    Produkt_Babka[0]->show();
     Hand    = new Static_Object(":/res/ruka.png", 100, 100, this);          // подсказка - рука
 
     yes = new QMediaPlayer;
@@ -121,8 +102,8 @@ Lev_3_Window::Lev_3_Window(QWidget *parent) : QMainWindow(parent)
     shows->setVolume(0);
     shows->play();
 
-    old_x = Produkt[0].x();                            // Начальные координаты корзины
-    old_y = Produkt[0].y();
+    old_x = Produkt[0]->x();                            // Начальные координаты корзины
+    old_y = Produkt[0]->y();
 
     init();                                             // инициализация предметов на поле
 
@@ -139,9 +120,9 @@ Lev_3_Window::~Lev_3_Window()
 {
     delete Background;
     delete Button_Return;
-    delete [] Produkt;
-    delete [] Produkt_Babka;
-    delete [] Tazik;
+    for(int i=0; i<8; ++i) delete Produkt[i];
+    for(int i=0; i<8; ++i) delete Produkt_Babka[i];
+    for(int i=0; i<5; ++i) delete Tazik[i];
     delete timer_help;
     delete timer_help_kolobok;
     delete timer_show_kolobok;
@@ -202,7 +183,7 @@ void Lev_3_Window::init()
                 case 6: x[i] = desktop_width/2; y[i] = desktop_height/2+desktop_height/4+desktop_height/12; break;
                 }
 
-                    Produkt[i].move(x[i], y[i]);       // размещаем объект со случайными координатами
+                Produkt[i]->move(x[i], y[i]);       // размещаем объект со случайными координатами
                     ++i;
                 }
             }
@@ -215,24 +196,24 @@ void Lev_3_Window::mousePressEvent(QMouseEvent *pe)
 {
     if(!FLAG_KOLOBOK)           // если тесто еще не готово
     {
-        if((pe->x()>Produkt[index].x())&&(pe->x()<Produkt[index].x()+Produkt[index].width())&&
-           (pe->y()>Produkt[index].y())&&(pe->y()<Produkt[index].y()+Produkt[index].height()))
+        if((pe->x()>Produkt[index]->x())&&(pe->x()<Produkt[index]->x()+Produkt[index]->width())&&
+            (pe->y()>Produkt[index]->y())&&(pe->y()<Produkt[index]->y()+Produkt[index]->height()))
         {
-            old_x = Produkt[index].x();            // Запоминаем координаты, где находился предмет,
-            old_y = Produkt[index].y();            // который мы взяли
+            old_x = Produkt[index]->x();            // Запоминаем координаты, где находился предмет,
+            old_y = Produkt[index]->y();            // который мы взяли
             FLAG_PRODUKT = true;                    // запоминаем, что предмет выбран
             Hand->hide();                           // скрываем подсказку
             timer_help->stop();
         }
     } else
     {
-        if((pe->x()>Tazik[4].x())&&(pe->x()<Tazik[4].x()+Tazik[4].width())&&             // если тесто готово
-           (pe->y()>Tazik[4].y())&&(pe->y()<Tazik[4].y()+Tazik[4].height()))
+        if((pe->x()>Tazik[4]->x())&&(pe->x()<Tazik[4]->x()+Tazik[4]->width())&&             // если тесто готово
+           (pe->y()>Tazik[4]->y())&&(pe->y()<Tazik[4]->y()+Tazik[4]->height()))
         {
             timer_help_kolobok->stop();
             Hand->hide();
-            old_x = Tazik[4].x();                  // принцип тот же, что и со всеми предметами
-            old_y = Tazik[4].y();
+            old_x = Tazik[4]->x();                  // принцип тот же, что и со всеми предметами
+            old_y = Tazik[4]->y();
             FLAG_PRODUKT = true;
         }
     }
@@ -247,15 +228,15 @@ void Lev_3_Window::mouseMoveEvent(QMouseEvent *pe)
     {
         if(FLAG_PRODUKT)
         {
-            Produkt[index].move(pe->x()-Produkt[index].width()/2, pe->y()-Produkt[index].height()/2);  // курсор по центру предмета
-            Produkt[index].raise();                                                                      // предмет на передний план
+            Produkt[index]->move(pe->x()-Produkt[index]->width()/2, pe->y()-Produkt[index]->height()/2);  // курсор по центру предмета
+            Produkt[index]->raise();                                                                      // предмет на передний план
         }
     }   else
     {
         if(FLAG_PRODUKT)            // если тесто готово, то перемещаем тазик с тестом в печь
         {
-            Tazik[4].move(pe->x()-Tazik[4].width()/2, pe->y()-Tazik[4].height()/2);
-            Tazik[4].raise();
+            Tazik[4]->move(pe->x()-Tazik[4]->width()/2, pe->y()-Tazik[4]->height()/2);
+            Tazik[4]->raise();
         }
     }
 }
@@ -274,7 +255,7 @@ void Lev_3_Window::mouseReleaseEvent(QMouseEvent *pe)
 
             if(index==0)                                                            // если поставили корзину увеличим ее немного
             {
-                Produkt[0].move(Stol->x()+Stol->width()/2-Produkt[0].width()/2, Stol->y());
+                Produkt[0]->move(Stol->x()+Stol->width()/2-Produkt[0]->width()/2, Stol->y());
             }
 
             ++index;                                                                // индекс следующего продмета
@@ -287,43 +268,43 @@ void Lev_3_Window::mouseReleaseEvent(QMouseEvent *pe)
             }
 
             FLAG_PRODUKT=false;
-            old_x = Produkt[index].x();                                            // начальные координаты нового предмета
-            old_y = Produkt[index].y();
-            Produkt_Babka[index-1].hide();
-            if(index>=2) Produkt[index-1].hide();
+            old_x = Produkt[index]->x();                                            // начальные координаты нового предмета
+            old_y = Produkt[index]->y();
+            Produkt_Babka[index-1]->hide();
+            if(index>=2) Produkt[index-1]->hide();
             if(index==2)
             {
-                Produkt_Babka[index].move(Mysl->x()+Mysl->width()/4, Mysl->y()+Mysl->height()/20);  // обновляем мысли бабки - мука
+                Produkt_Babka[index]->move(Mysl->x()+Mysl->width()/4, Mysl->y()+Mysl->height()/20);  // обновляем мысли бабки - мука
             } else
             {
-                Produkt_Babka[index].move(Mysl->x()+Mysl->width()/4, Mysl->y()+Mysl->height()/4);  // обновляем мысли бабки - остальные
+                Produkt_Babka[index]->move(Mysl->x()+Mysl->width()/4, Mysl->y()+Mysl->height()/4);  // обновляем мысли бабки - остальные
             }
-            Produkt_Babka[index].show();
+            Produkt_Babka[index]->show();
             switch(index)                                                                           //   меняем содержимое тазика
             {
-            case 2: Produkt[0].hide(); Tazik[0].move(Stol->x()+Stol->width()/2-Tazik[0].width()/2, Stol->y()); Tazik[0].show(); break;
-            case 3: Tazik[0].hide(); Tazik[1].move(Stol->x()+Stol->width()/2-Tazik[1].width()/2, Stol->y()); Tazik[1].show(); break;
-            case 4: Tazik[1].hide(); Tazik[2].move(Stol->x()+Stol->width()/2-Tazik[2].width()/2, Stol->y()); Tazik[2].show(); break;
-            case 5: Tazik[2].hide(); Tazik[3].move(Stol->x()+Stol->width()/2-Tazik[3].width()/2, Stol->y()); Tazik[3].show(); break;
-            case 6: Tazik[2].hide(); Tazik[3].move(Stol->x()+Stol->width()/2-Tazik[3].width()/2, Stol->y()); Tazik[3].show(); break;
-            case 7: Tazik[3].hide(); Tazik[4].move(Stol->x()+Stol->width()/2-Tazik[4].width()/2, Stol->y()); Tazik[4].show(); break;
+            case 2: Produkt[0]->hide(); Tazik[0]->move(Stol->x()+Stol->width()/2-Tazik[0]->width()/2, Stol->y()); Tazik[0]->show(); break;
+            case 3: Tazik[0]->hide(); Tazik[1]->move(Stol->x()+Stol->width()/2-Tazik[1]->width()/2, Stol->y()); Tazik[1]->show(); break;
+            case 4: Tazik[1]->hide(); Tazik[2]->move(Stol->x()+Stol->width()/2-Tazik[2]->width()/2, Stol->y()); Tazik[2]->show(); break;
+            case 5: Tazik[2]->hide(); Tazik[3]->move(Stol->x()+Stol->width()/2-Tazik[3]->width()/2, Stol->y()); Tazik[3]->show(); break;
+            case 6: Tazik[2]->hide(); Tazik[3]->move(Stol->x()+Stol->width()/2-Tazik[3]->width()/2, Stol->y()); Tazik[3]->show(); break;
+            case 7: Tazik[3]->hide(); Tazik[4]->move(Stol->x()+Stol->width()/2-Tazik[4]->width()/2, Stol->y()); Tazik[4]->show(); break;
             }
 
         } else
         {
             no->setVolume(100);
             no->play();
-            Produkt[index].move(old_x, old_y);
+            Produkt[index]->move(old_x, old_y);
             FLAG_PRODUKT=false;
         }
     } else      // если тесто готово, перемещаем его на печь, чтобы появился колобок
     {
         if((pe->x()<desktop_width/4)&&(pe->y()<desktop_height/2+desktop_height/10)&&(pe->y()>desktop_height/10))
         {
-            Tazik[4].hide();                           // Скрываем тазик и показываем колобка
-            Produkt[7].show();
+            Tazik[4]->hide();                           // Скрываем тазик и показываем колобка
+            Produkt[7]->show();
             Mysl->hide();
-            Produkt_Babka[7].hide();
+            Produkt_Babka[7]->hide();
             FLAG_KOLOBOK = true;
             shows->setVolume(100);
             shows->play();
@@ -343,10 +324,10 @@ void Lev_3_Window::help_game()
     int y, y1;
     int old_xm, old_ym;         // начальное положение тазика
 
-    x = Produkt[0].x()+Produkt[0].width()/2-Hand->width()/2+hand_x;
-    y = Produkt[0].y()+Produkt[0].height()/2+hand_y;
-    old_xm = Produkt[0].x()+Produkt[0].width()/2;
-    old_ym = Produkt[0].y()+Produkt[0].height()/2;
+    x = Produkt[0]->x()+Produkt[0]->width()/2-Hand->width()/2+hand_x;
+    y = Produkt[0]->y()+Produkt[0]->height()/2+hand_y;
+    old_xm = Produkt[0]->x()+Produkt[0]->width()/2;
+    old_ym = Produkt[0]->y()+Produkt[0]->height()/2;
     x1 = Stol->x()+Stol->width()/2;
     y1 = Stol->y()+Stol->height()/4;
 
@@ -424,16 +405,16 @@ void Lev_3_Window::show_kolobok()
 {
     static int size_kolobok, i;
 
-    Produkt[7].resize_obj(size_kolobok,size_kolobok);
-    Produkt[7].move(old_x,old_y);
+    Produkt[7]->resize_obj(size_kolobok,size_kolobok);
+    Produkt[7]->move(old_x,old_y);
     ++size_kolobok;
     ++i;
     if(size_kolobok>=100) size_kolobok = 100;
     if(i>=300)
     {
         timer_show_kolobok->stop();
-        kol_x = Produkt[7].x();
-        kol_y = Produkt[7].y();
+        kol_x = Produkt[7]->x();
+        kol_y = Produkt[7]->y();
         timer_move_kolobok->start(2);
     }
 }
@@ -450,9 +431,9 @@ void Lev_3_Window::move_kolobok()
         level++;
         delete Background;
         delete Button_Return;
-        delete [] Produkt;
-        delete [] Produkt_Babka;
-        delete [] Tazik;
+        for(int i=0; i<8; ++i) delete Produkt[i];
+        for(int i=0; i<8; ++i) delete Produkt_Babka[i];
+        for(int i=0; i<5; ++i) delete Tazik[i];
         delete timer_help;
         delete timer_help_kolobok;
         delete timer_show_kolobok;
@@ -530,5 +511,5 @@ void Lev_3_Window::move_kolobok()
             stuk->play();
         }
     }
-    Produkt[7].move(kol_x, kol_y);
+    Produkt[7]->move(kol_x, kol_y);
 }

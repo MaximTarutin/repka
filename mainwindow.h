@@ -16,12 +16,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    QLabel          *Background;                        //  Заставка
-    QPushButton     *Button_Start;                      //  Кнопка начать игру
-    QPushButton     *Button_Exit;                       //  Кнопка выйти из игры
-    MapWindow       *mapwindow;                         //  1 уровень (игровая карта)
+    QLabel          *Background = nullptr;                          //  Заставка
+    QPushButton     *Button_Start = nullptr;                        //  Кнопка начать игру
+    QPushButton     *Button_Exit = nullptr;                         //  Кнопка выйти из игры
+    MapWindow       *mapwindow = nullptr;                           //  1 уровень (игровая карта)
 
-    int             level;                              //  номер уровня
+    int             level = 0;                                      //  номер уровня
 
     void            desktop_size();                     //  присваивает значение переменным desktop_width и desktop_height
 

@@ -24,9 +24,9 @@ public:
     QLabel                  *Background;                                    // Фон экрана
     QPushButton             *Button_Return;                                 // кнопка назад
     QLabel                  *Subject_Area;                                  // область карандашей
-    Static_Object           *Vnuchka;                                       // Внучка раскраска
-    Static_Object           *Pen;                                           // Карандаши
-    Static_Object           *Mysl_Object;                                   // Объекты в мыслях
+    Static_Object           *Vnuchka [8];                                       // Внучка раскраска
+    Static_Object           *Pen [8];                                       // Карандаши
+    Static_Object           *Mysl_Object [8];                               // Объекты в мыслях
     Static_Object           *Masha;                                         // Внучка
     Static_Object           *Mysl;                                          // Мысль
     Static_Object           *Holst;                                         // Холст
