@@ -25,7 +25,7 @@ public:
     Static_Object           *Myschka;                                       // Мышка
     Static_Object           *Mysl;                                          // Мысль
     Static_Object           *Mysl_1;                                        // Мысль о картине в сборе
-    Static_Object           *Plitka;                                        // Плитки
+    Static_Object           *Plitka[16];                                    // Плитки
     Static_Object           *Chees;                                         // сыр
     QTimer                  *pobeda_timer;                                  // таймер победы
     QMovie                  *movie;                                         // анимация

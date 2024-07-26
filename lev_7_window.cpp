@@ -30,30 +30,48 @@ Lev_7_Window::Lev_7_Window(QWidget *parent) : QMainWindow(parent)
     Mysl_1  = new Static_Object(":/res7/put.png", 150, 150, Mysl);
     Mysl_1->move(190,140);
 
-    Plitka      = new Static_Object[16];
+    // Plitka      = new Static_Object[16];
 
-    for(int i=0; i<16; ++i)
-    {
-        Plitka[i].setParent(this);
-        Plitka[i].resize_obj(200,200);
-    }
+    // for(int i=0; i<16; ++i)
+    // {
+    //     Plitka[i].setParent(this);
+    //     Plitka[i].resize_obj(200,200);
+    // }
 
-    Plitka[0].pic_obj(":/res7/01.png");
-    Plitka[1].pic_obj(":/res7/02.png");
-    Plitka[2].pic_obj(":/res7/03.png");
-    Plitka[3].pic_obj(":/res7/04.png");
-    Plitka[4].pic_obj(":/res7/05.png");
-    Plitka[5].pic_obj(":/res7/06.png");
-    Plitka[6].pic_obj(":/res7/07.png");
-    Plitka[7].pic_obj(":/res7/08.png");
-    Plitka[8].pic_obj(":/res7/09.png");
-    Plitka[9].pic_obj(":/res7/10.png");
-    Plitka[10].pic_obj(":/res7/11.png");
-    Plitka[11].pic_obj(":/res7/12.png");
-    Plitka[12].pic_obj(":/res7/13.png");
-    Plitka[13].pic_obj(":/res7/14.png");
-    Plitka[14].pic_obj(":/res7/15.png");
-    Plitka[15].pic_obj(":/res7/16.png");
+    // Plitka[0].pic_obj(":/res7/01.png");
+    // Plitka[1].pic_obj(":/res7/02.png");
+    // Plitka[2].pic_obj(":/res7/03.png");
+    // Plitka[3].pic_obj(":/res7/04.png");
+    // Plitka[4].pic_obj(":/res7/05.png");
+    // Plitka[5].pic_obj(":/res7/06.png");
+    // Plitka[6].pic_obj(":/res7/07.png");
+    // Plitka[7].pic_obj(":/res7/08.png");
+    // Plitka[8].pic_obj(":/res7/09.png");
+    // Plitka[9].pic_obj(":/res7/10.png");
+    // Plitka[10].pic_obj(":/res7/11.png");
+    // Plitka[11].pic_obj(":/res7/12.png");
+    // Plitka[12].pic_obj(":/res7/13.png");
+    // Plitka[13].pic_obj(":/res7/14.png");
+    // Plitka[14].pic_obj(":/res7/15.png");
+    // Plitka[15].pic_obj(":/res7/16.png");
+
+    Plitka[0] = new Static_Object(":/res7/01.png", 200, 200, this);
+    Plitka[1] = new Static_Object(":/res7/02.png", 200, 200, this);
+    Plitka[2] = new Static_Object(":/res7/03.png", 200, 200, this);
+    Plitka[3] = new Static_Object(":/res7/04.png", 200, 200, this);
+    Plitka[4] = new Static_Object(":/res7/05.png", 200, 200, this);
+    Plitka[5] = new Static_Object(":/res7/06.png", 200, 200, this);
+    Plitka[6] = new Static_Object(":/res7/07.png", 200, 200, this);
+    Plitka[7] = new Static_Object(":/res7/08.png", 200, 200, this);
+    Plitka[8] = new Static_Object(":/res7/09.png", 200, 200, this);
+    Plitka[9] = new Static_Object(":/res7/10.png", 200, 200, this);
+    Plitka[10] = new Static_Object(":/res7/11.png", 200, 200, this);
+    Plitka[11] = new Static_Object(":/res7/12.png", 200, 200, this);
+    Plitka[12] = new Static_Object(":/res7/13.png", 200, 200, this);
+    Plitka[13] = new Static_Object(":/res7/14.png", 200, 200, this);
+    Plitka[14] = new Static_Object(":/res7/15.png", 200, 200, this);
+    Plitka[15] = new Static_Object(":/res7/16.png", 200, 200, this);
+
 
     Chees   = new Static_Object(":/res7/syr.png", 200, 200, this);
     Chees->move(desktop_width/6-150, desktop_height/8+100);
@@ -77,7 +95,7 @@ Lev_7_Window::~Lev_7_Window()
     delete Button_Return;
     delete Myschka;
     delete Chees;
-    delete [] Plitka;
+    for(int i=0; i<16; ++i) delete Plitka[i];
     delete Mysl;
     delete Mysl_1;
     delete pobeda_timer;
@@ -109,22 +127,22 @@ void Lev_7_Window::init()
 {
     int i;
 
-    Plitka[0].move(desktop_width/6+100,     desktop_height/8+100);
-    Plitka[1].move(desktop_width/6+300, desktop_height/8+100);
-    Plitka[2].move(desktop_width/6+500, desktop_height/8+100);
-    Plitka[3].move(desktop_width/6+700, desktop_height/8+100);
-    Plitka[4].move(desktop_width/6+100,     desktop_height/8+300);
-    Plitka[5].move(desktop_width/6+300, desktop_height/8+300);
-    Plitka[6].move(desktop_width/6+500, desktop_height/8+300);
-    Plitka[7].move(desktop_width/6+700, desktop_height/8+300);
-    Plitka[8].move(desktop_width/6+100,     desktop_height/8+500);
-    Plitka[9].move(desktop_width/6+300, desktop_height/8+500);
-    Plitka[10].move(desktop_width/6+500, desktop_height/8+500);
-    Plitka[11].move(desktop_width/6+700, desktop_height/8+500);
-    Plitka[12].move(desktop_width/6+100,     desktop_height/8+700);
-    Plitka[13].move(desktop_width/6+300, desktop_height/8+700);
-    Plitka[14].move(desktop_width/6+500, desktop_height/8+700);
-    Plitka[15].move(desktop_width/6+700, desktop_height/8+700);
+    Plitka[0]->move(desktop_width/6+100,     desktop_height/8+100);
+    Plitka[1]->move(desktop_width/6+300, desktop_height/8+100);
+    Plitka[2]->move(desktop_width/6+500, desktop_height/8+100);
+    Plitka[3]->move(desktop_width/6+700, desktop_height/8+100);
+    Plitka[4]->move(desktop_width/6+100,     desktop_height/8+300);
+    Plitka[5]->move(desktop_width/6+300, desktop_height/8+300);
+    Plitka[6]->move(desktop_width/6+500, desktop_height/8+300);
+    Plitka[7]->move(desktop_width/6+700, desktop_height/8+300);
+    Plitka[8]->move(desktop_width/6+100,     desktop_height/8+500);
+    Plitka[9]->move(desktop_width/6+300, desktop_height/8+500);
+    Plitka[10]->move(desktop_width/6+500, desktop_height/8+500);
+    Plitka[11]->move(desktop_width/6+700, desktop_height/8+500);
+    Plitka[12]->move(desktop_width/6+100,     desktop_height/8+700);
+    Plitka[13]->move(desktop_width/6+300, desktop_height/8+700);
+    Plitka[14]->move(desktop_width/6+500, desktop_height/8+700);
+    Plitka[15]->move(desktop_width/6+700, desktop_height/8+700);
 
     for(i=0; i<16; ++i)
     {
@@ -137,7 +155,7 @@ void Lev_7_Window::init()
         case 3: radian[i] = 270;    break;
         }
 
-        Plitka[i].pic_rotate(radian[i]);
+        Plitka[i]->pic_rotate(radian[i]);
     }
 }
 
@@ -145,86 +163,86 @@ void Lev_7_Window::init()
 
 void Lev_7_Window::mousePressEvent(QMouseEvent *pe)
 {
-    if((pe->x()>Plitka[0].x())&&(pe->x()<Plitka[15].x()+Plitka[15].width())&&           // попадает ли курсор в область пазлов
-        (pe->y()>Plitka[0].y())&&(pe->y()<Plitka[15].y()+Plitka[15].height()))
+    if((pe->x()>Plitka[0]->x())&&(pe->x()<Plitka[15]->x()+Plitka[15]->width())&&           // попадает ли курсор в область пазлов
+        (pe->y()>Plitka[0]->y())&&(pe->y()<Plitka[15]->y()+Plitka[15]->height()))
     {
-        if((pe->x()>Plitka[0].x())&&(pe->x()<Plitka[0].x()+Plitka[0].width())&&         // на какую именно плитку кликнули
-           (pe->y()>Plitka[0].y())&&(pe->y()<Plitka[0].y()+Plitka[0].height()))
+        if((pe->x()>Plitka[0]->x())&&(pe->x()<Plitka[0]->x()+Plitka[0]->width())&&         // на какую именно плитку кликнули
+           (pe->y()>Plitka[0]->y())&&(pe->y()<Plitka[0]->y()+Plitka[0]->height()))
         {
             index = 0;
         }
-        if((pe->x()>Plitka[1].x())&&(pe->x()<Plitka[1].x()+Plitka[1].width())&&
-           (pe->y()>Plitka[1].y())&&(pe->y()<Plitka[1].y()+Plitka[1].height()))
+        if((pe->x()>Plitka[1]->x())&&(pe->x()<Plitka[1]->x()+Plitka[1]->width())&&
+           (pe->y()>Plitka[1]->y())&&(pe->y()<Plitka[1]->y()+Plitka[1]->height()))
         {
             index = 1;
         }
-        if((pe->x()>Plitka[2].x())&&(pe->x()<Plitka[2].x()+Plitka[2].width())&&         // на какую именно плитку кликнули
-           (pe->y()>Plitka[2].y())&&(pe->y()<Plitka[2].y()+Plitka[2].height()))
+        if((pe->x()>Plitka[2]->x())&&(pe->x()<Plitka[2]->x()+Plitka[2]->width())&&         // на какую именно плитку кликнули
+           (pe->y()>Plitka[2]->y())&&(pe->y()<Plitka[2]->y()+Plitka[2]->height()))
         {
             index = 2;
         }
-        if((pe->x()>Plitka[3].x())&&(pe->x()<Plitka[3].x()+Plitka[3].width())&&
-           (pe->y()>Plitka[3].y())&&(pe->y()<Plitka[3].y()+Plitka[3].height()))
+        if((pe->x()>Plitka[3]->x())&&(pe->x()<Plitka[3]->x()+Plitka[3]->width())&&
+           (pe->y()>Plitka[3]->y())&&(pe->y()<Plitka[3]->y()+Plitka[3]->height()))
         {
             index = 3;
         }
-        if((pe->x()>Plitka[4].x())&&(pe->x()<Plitka[4].x()+Plitka[4].width())&&         // на какую именно плитку кликнули
-           (pe->y()>Plitka[4].y())&&(pe->y()<Plitka[4].y()+Plitka[4].height()))
+        if((pe->x()>Plitka[4]->x())&&(pe->x()<Plitka[4]->x()+Plitka[4]->width())&&         // на какую именно плитку кликнули
+           (pe->y()>Plitka[4]->y())&&(pe->y()<Plitka[4]->y()+Plitka[4]->height()))
         {
             index = 4;
         }
-        if((pe->x()>Plitka[5].x())&&(pe->x()<Plitka[5].x()+Plitka[5].width())&&
-           (pe->y()>Plitka[5].y())&&(pe->y()<Plitka[5].y()+Plitka[5].height()))
+        if((pe->x()>Plitka[5]->x())&&(pe->x()<Plitka[5]->x()+Plitka[5]->width())&&
+           (pe->y()>Plitka[5]->y())&&(pe->y()<Plitka[5]->y()+Plitka[5]->height()))
         {
             index = 5;
         }
-        if((pe->x()>Plitka[6].x())&&(pe->x()<Plitka[6].x()+Plitka[6].width())&&         // на какую именно плитку кликнули
-           (pe->y()>Plitka[6].y())&&(pe->y()<Plitka[6].y()+Plitka[6].height()))
+        if((pe->x()>Plitka[6]->x())&&(pe->x()<Plitka[6]->x()+Plitka[6]->width())&&         // на какую именно плитку кликнули
+           (pe->y()>Plitka[6]->y())&&(pe->y()<Plitka[6]->y()+Plitka[6]->height()))
         {
             index = 6;
         }
-        if((pe->x()>Plitka[7].x())&&(pe->x()<Plitka[7].x()+Plitka[7].width())&&
-           (pe->y()>Plitka[7].y())&&(pe->y()<Plitka[7].y()+Plitka[7].height()))
+        if((pe->x()>Plitka[7]->x())&&(pe->x()<Plitka[7]->x()+Plitka[7]->width())&&
+           (pe->y()>Plitka[7]->y())&&(pe->y()<Plitka[7]->y()+Plitka[7]->height()))
         {
             index = 7;
         }
-        if((pe->x()>Plitka[8].x())&&(pe->x()<Plitka[8].x()+Plitka[8].width())&&         // на какую именно плитку кликнули
-           (pe->y()>Plitka[8].y())&&(pe->y()<Plitka[8].y()+Plitka[8].height()))
+        if((pe->x()>Plitka[8]->x())&&(pe->x()<Plitka[8]->x()+Plitka[8]->width())&&         // на какую именно плитку кликнули
+           (pe->y()>Plitka[8]->y())&&(pe->y()<Plitka[8]->y()+Plitka[8]->height()))
         {
             index = 8;
         }
-        if((pe->x()>Plitka[9].x())&&(pe->x()<Plitka[9].x()+Plitka[9].width())&&
-           (pe->y()>Plitka[9].y())&&(pe->y()<Plitka[9].y()+Plitka[9].height()))
+        if((pe->x()>Plitka[9]->x())&&(pe->x()<Plitka[9]->x()+Plitka[9]->width())&&
+           (pe->y()>Plitka[9]->y())&&(pe->y()<Plitka[9]->y()+Plitka[9]->height()))
         {
             index = 9;
         }
-        if((pe->x()>Plitka[10].x())&&(pe->x()<Plitka[10].x()+Plitka[10].width())&&         // на какую именно плитку кликнули
-           (pe->y()>Plitka[10].y())&&(pe->y()<Plitka[10].y()+Plitka[10].height()))
+        if((pe->x()>Plitka[10]->x())&&(pe->x()<Plitka[10]->x()+Plitka[10]->width())&&         // на какую именно плитку кликнули
+           (pe->y()>Plitka[10]->y())&&(pe->y()<Plitka[10]->y()+Plitka[10]->height()))
         {
             index = 10;
         }
-        if((pe->x()>Plitka[11].x())&&(pe->x()<Plitka[11].x()+Plitka[11].width())&&
-           (pe->y()>Plitka[11].y())&&(pe->y()<Plitka[11].y()+Plitka[11].height()))
+        if((pe->x()>Plitka[11]->x())&&(pe->x()<Plitka[11]->x()+Plitka[11]->width())&&
+           (pe->y()>Plitka[11]->y())&&(pe->y()<Plitka[11]->y()+Plitka[11]->height()))
         {
             index = 11;
         }
-        if((pe->x()>Plitka[12].x())&&(pe->x()<Plitka[12].x()+Plitka[12].width())&&         // на какую именно плитку кликнули
-           (pe->y()>Plitka[12].y())&&(pe->y()<Plitka[12].y()+Plitka[12].height()))
+        if((pe->x()>Plitka[12]->x())&&(pe->x()<Plitka[12]->x()+Plitka[12]->width())&&         // на какую именно плитку кликнули
+           (pe->y()>Plitka[12]->y())&&(pe->y()<Plitka[12]->y()+Plitka[12]->height()))
         {
             index = 12;
         }
-        if((pe->x()>Plitka[13].x())&&(pe->x()<Plitka[13].x()+Plitka[13].width())&&
-           (pe->y()>Plitka[13].y())&&(pe->y()<Plitka[13].y()+Plitka[13].height()))
+        if((pe->x()>Plitka[13]->x())&&(pe->x()<Plitka[13]->x()+Plitka[13]->width())&&
+           (pe->y()>Plitka[13]->y())&&(pe->y()<Plitka[13]->y()+Plitka[13]->height()))
         {
             index = 13;
         }
-        if((pe->x()>Plitka[14].x())&&(pe->x()<Plitka[14].x()+Plitka[14].width())&&         // на какую именно плитку кликнули
-           (pe->y()>Plitka[14].y())&&(pe->y()<Plitka[14].y()+Plitka[14].height()))
+        if((pe->x()>Plitka[14]->x())&&(pe->x()<Plitka[14]->x()+Plitka[14]->width())&&         // на какую именно плитку кликнули
+           (pe->y()>Plitka[14]->y())&&(pe->y()<Plitka[14]->y()+Plitka[14]->height()))
         {
             index = 14;
         }
-        if((pe->x()>Plitka[15].x())&&(pe->x()<Plitka[15].x()+Plitka[15].width())&&
-           (pe->y()>Plitka[15].y())&&(pe->y()<Plitka[15].y()+Plitka[15].height()))
+        if((pe->x()>Plitka[15]->x())&&(pe->x()<Plitka[15]->x()+Plitka[15]->width())&&
+           (pe->y()>Plitka[15]->y())&&(pe->y()<Plitka[15]->y()+Plitka[15]->height()))
         {
             index = 15;
         }
@@ -235,7 +253,7 @@ void Lev_7_Window::mousePressEvent(QMouseEvent *pe)
             int k=0;
             if(radian[index]==360) radian[index]=0;
             radian[index]+=90;
-            Plitka[index].pic_rotate(radian[index]);
+            Plitka[index]->pic_rotate(radian[index]);
             plitka_sost[index]++;                       // проверяем в каком положении находится плитка
             if(plitka_sost[index]>3) plitka_sost[index]=0;
 
@@ -271,7 +289,7 @@ void Lev_7_Window::pobeda()
         delete Button_Return;
         delete Myschka;
         delete Chees;
-        delete [] Plitka;
+        for(int i=0; i<16; ++i) delete Plitka[i];
         delete Mysl_1;
         delete Mysl;
         delete pobeda_timer;
