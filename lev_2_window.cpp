@@ -139,47 +139,43 @@ void Lev_2_Window::init()
                         switch (k)      // создаем массив инструментов
                         {
                         case 0: Tools[i]     = new Static_Object(":/res2/fomka.png",   100, 100, this);
-                                Tools_Ded[i] = new Static_Object(":/res2/fomka.png",   100, 100, this); break;
+                                Tools_Ded[i] = new Static_Object(":/res2/fomka.png",   100, 100, this);
+                                tools_x[i] = x-150; tools_y[i] = y-300;
+                                tools_x_end[i] = Subject_Area->x(); tools_y_end[i] = Subject_Area->y(); break;
                         case 1: Tools[i]     = new Static_Object(":/res2/leyka.png",   100, 100, this);
-                                Tools_Ded[i] = new Static_Object(":/res2/leyka.png",   100, 100, this); break;
-                        case 2: Tools[i]     = new Static_Object(":/res2/lopata.png",  100, 100, this);
-                                Tools_Ded[i] = new Static_Object(":/res2/lopata.png",  100, 100, this); break;
-                        case 3: Tools[i]     = new Static_Object(":/res2/molotok.png", 100, 100, this);
-                                Tools_Ded[i] = new Static_Object(":/res2/molotok.png", 100, 100, this); break;
-                        case 4: Tools[i]     = new Static_Object(":/res2/serp.png",    100, 100, this);
-                                Tools_Ded[i] = new Static_Object(":/res2/serp.png",    100, 100, this); break;
-                        case 5: Tools[i]     = new Static_Object(":/res2/topor.png",   100, 100, this);
-                                Tools_Ded[i] = new Static_Object(":/res2/topor.png",   100, 100, this); break;
-                        case 6: Tools[i]     = new Static_Object(":/res2/vedro.png",   100, 100, this);
-                                Tools_Ded[i] = new Static_Object(":/res2/vedro.png",   100, 100, this); break;
-                        case 7: Tools[i]     = new Static_Object(":/res2/vily.png",    100, 100, this);
-                                Tools_Ded[i] = new Static_Object(":/res2/vily.png",    100, 100, this); break;
-                        }
-
-                        switch (m)      // присваиваем инструментам начальные и конечные координаты
-                        {
-                        case 0: tools_x[i] = x-150;     tools_y[i] = y-300;
-                                tools_x_end[i] = Subject_Area->x();     tools_y_end[i] = Subject_Area->y(); break;
-                        case 1: tools_x[i] = x/2;       tools_y[i] = y/2-30;
+                                Tools_Ded[i] = new Static_Object(":/res2/leyka.png",   100, 100, this);
+                                tools_x[i] = x/2; tools_y[i] = y/2-30;
                                 tools_x_end[i] = Subject_Area->x()+120; tools_y_end[i] = Subject_Area->y(); break;
-                        case 2: tools_x[i] = x-450;     tools_y[i] = y/2-30;
+                        case 2: Tools[i]     = new Static_Object(":/res2/lopata.png",  100, 100, this);
+                                Tools_Ded[i] = new Static_Object(":/res2/lopata.png",  100, 100, this);
+                                tools_x[i] = x-450; tools_y[i] = y/2-30;
                                 tools_x_end[i] = Subject_Area->x()+240; tools_y_end[i] = Subject_Area->y(); break;
-                        case 3: tools_x[i] = x/4;       tools_y[i] = y-380;
+                        case 3: Tools[i]     = new Static_Object(":/res2/molotok.png", 100, 100, this);
+                                Tools_Ded[i] = new Static_Object(":/res2/molotok.png", 100, 100, this);
+                                tools_x[i] = x/4; tools_y[i] = y-380;
                                 tools_x_end[i] = Subject_Area->x()+360; tools_y_end[i] = Subject_Area->y(); break;
-                        case 4: tools_x[i] = x/2-450;   tools_y[i] = y/2-180;
+                        case 4: Tools[i]     = new Static_Object(":/res2/serp.png",    100, 100, this);
+                                Tools_Ded[i] = new Static_Object(":/res2/serp.png",    100, 100, this);
+                                tools_x[i] = x/2-450; tools_y[i] = y/2-180;
                                 tools_x_end[i] = Subject_Area->x()+480; tools_y_end[i] = Subject_Area->y(); break;
-                        case 5: tools_x[i] = x/2+x/6;   tools_y[i] = y/5+70;
+                        case 5: Tools[i]     = new Static_Object(":/res2/topor.png",   100, 100, this);
+                                Tools_Ded[i] = new Static_Object(":/res2/topor.png",   100, 100, this);
+                                tools_x[i] = x/2+x/6; tools_y[i] = y/5+70;
                                 tools_x_end[i] = Subject_Area->x()+600; tools_y_end[i] = Subject_Area->y(); break;
-                        case 6: tools_x[i] = 50;        tools_y[i] = y/2-50;
+                        case 6: Tools[i]     = new Static_Object(":/res2/vedro.png",   100, 100, this);
+                                Tools_Ded[i] = new Static_Object(":/res2/vedro.png",   100, 100, this);
+                                tools_x[i] = 50; tools_y[i] = y/2-50;
                                 tools_x_end[i] = Subject_Area->x()+720; tools_y_end[i] = Subject_Area->y(); break;
-                        case 7: tools_x[i] = x/8;       tools_y[i] = y/8-80;
+                        case 7: Tools[i]     = new Static_Object(":/res2/vily.png",    100, 100, this);
+                                Tools_Ded[i] = new Static_Object(":/res2/vily.png",    100, 100, this);
+                                tools_x[i] = x/8; tools_y[i] = y/8-80;
                                 tools_x_end[i] = Subject_Area->x()+840; tools_y_end[i] = Subject_Area->y(); break;
                         }
 
                 Tools[i]->move(tools_x[i], tools_y[i]);
                 Tools[i]->resize(150,150);
                 Tools_Ded[i]->hide();
-                ++i;
+                i++;
             }
         }
     }
