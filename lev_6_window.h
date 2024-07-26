@@ -24,8 +24,8 @@ public:
     QLabel                  *Background;                                    // Фон
     QPushButton             *Button_Return;                                 // Кнопка возврата на карту
     Static_Object           *Cat;                                           // Кошка
-    Static_Object           *Plitka_fon;                                    // Тыльная сторона плитки
-    Static_Object           *Plitka;                                        // Плитки
+    Static_Object           *Plitka_fon[16];                                // Тыльная сторона плитки
+    Static_Object           *Plitka[16];                                    // Плитки
     QTimer                  *pause_timer;                                   // таймеры
     QTimer                  *pause1_timer;
     QTimer                  *pobeda;
