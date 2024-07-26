@@ -27,7 +27,6 @@ public:
     ~Static_Object();
 
     void resize_obj(int w, int h);                      // изменение размеров объекта
-    void pic_obj(QString str);                          // путь к файлу с изображением
     void pic_rotate(int r);                             // Поворот обьекта на r градусов
 };
 

@@ -38,16 +38,6 @@ void Static_Object::resize_obj(int w, int h)
     setPixmap(pic);
 }
 
-void Static_Object::pic_obj(QString str)        // Здесь проблема (виснет запуск)
-{
-    //QLabel lab;
-    //lab.setStyleSheet("border-image: "+str+";");
-    // QPixmap pic(str);
-    // QSize PicSize(this->width(), this->height());               // Здесь вписываем картинку в размер QLabel
-    // pic = pic.scaled(PicSize,Qt::KeepAspectRatio);
-    // setPixmap(pic);
-}
-
 void Static_Object::pic_rotate(int r)
 {
     QPixmap pic(path_to_image);
