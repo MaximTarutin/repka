@@ -22,24 +22,24 @@ class Lev_2_Window : public QMainWindow
 public:
     explicit Lev_2_Window(QWidget *parent = nullptr);
 
-    QLabel              *Background;                                // фоновая картинка
-    QLabel              *Subject_Area;                              // область найденных предметов
-    QPushButton         *Button_Return;                             // кнопка назад
-    Static_Object       *Dedka;                                     // дедка
-    Static_Object       *Mysl;                                      // мысль
+    QLabel              *Background = nullptr;                                // фоновая картинка
+    QLabel              *Subject_Area = nullptr;                              // область найденных предметов
+    QPushButton         *Button_Return = nullptr;                             // кнопка назад
+    Static_Object       *Dedka = nullptr;                                     // дедка
+    Static_Object       *Mysl = nullptr;                                      // мысль
     Static_Object       *Tools [8];                                 // указатель на массив инструментов
     Static_Object       *Tools_Ded[8];                              // Текущий инструмент о котором думает дедка
-    Static_Object       *Hand;                                      // Рука для подсказки
-    QMediaPlayer        *yes;                                       // звуки
-    QMediaPlayer        *no;
-    QMediaPlayer        *victory;
-    QMediaPlayer        *salut_wav;
-    QTimer              *timer_move;                                // таймер для перемещения предметов
-    QTimer              *timer_salut;                               // таймер для салюта
-    QTimer              *timer_hand;                                      // таймер для подсказки
-    QMovie              *movie;                                     // анимация салюта
-    QLabel              *Salut;                                     // анимация салюта
-    QLabel              *Help;                                      // подсказка
+    Static_Object       *Hand = nullptr;                                      // Рука для подсказки
+    QMediaPlayer        *yes = nullptr;                                       // звуки
+    QMediaPlayer        *no = nullptr;
+    QMediaPlayer        *victory = nullptr;
+    QMediaPlayer        *salut_wav = nullptr;
+    QTimer              *timer_move = nullptr;                                // таймер для перемещения предметов
+    QTimer              *timer_salut = nullptr;                               // таймер для салюта
+    QTimer              *timer_hand = nullptr;                                      // таймер для подсказки
+    QMovie              *movie = nullptr;                                     // анимация салюта
+    QLabel              *Salut = nullptr;                                     // анимация салюта
+    QLabel              *Help = nullptr;                                      // подсказка
 
     int                 level;                                      // номер уровня
     int                 tool;                                       // текущий инструмент

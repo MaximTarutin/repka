@@ -119,10 +119,7 @@ Lev_3_Window::Lev_3_Window(QWidget *parent) : QMainWindow(parent)
 Lev_3_Window::~Lev_3_Window()
 {
     delete Background;
-    delete Button_Return;
-    for(int i=0; i<8; ++i) delete Produkt[i];
-    for(int i=0; i<8; ++i) delete Produkt_Babka[i];
-    for(int i=0; i<5; ++i) delete Tazik[i];
+    delete Button_Return;    
     delete timer_help;
     delete timer_help_kolobok;
     delete timer_show_kolobok;
@@ -135,6 +132,9 @@ Lev_3_Window::~Lev_3_Window()
     delete Mysl;
     delete Stol;
     delete Babka;
+    for(int i=0; i<8; ++i) delete Produkt[i];
+    for(int i=0; i<8; ++i) delete Produkt_Babka[i];
+    for(int i=0; i<5; ++i) delete Tazik[i];
 }
 
 //------------------ генератор случайных чисел в диапазоне от a до b -----------------------
@@ -431,9 +431,6 @@ void Lev_3_Window::move_kolobok()
         level++;
         delete Background;
         delete Button_Return;
-        for(int i=0; i<8; ++i) delete Produkt[i];
-        for(int i=0; i<8; ++i) delete Produkt_Babka[i];
-        for(int i=0; i<5; ++i) delete Tazik[i];
         delete timer_help;
         delete timer_help_kolobok;
         delete timer_show_kolobok;
@@ -446,20 +443,22 @@ void Lev_3_Window::move_kolobok()
         delete Mysl;
         delete Stol;
         delete Babka;
+        for(int i=0; i<8; ++i) delete Produkt[i];
+        for(int i=0; i<8; ++i) delete Produkt_Babka[i];
+        for(int i=0; i<5; ++i) delete Tazik[i];
         return_to_mainwindow();
-
     }
 
     if(!FLAG_MOVE_KOLOBOK_X && !FLAG_MOVE_KOLOBOK_Y)
     {
         kol_x = kol_x+2;
         kol_y = kol_y+2;
-        if(kol_x>desktop_width)
+        if(kol_x>=desktop_width)
         {
             FLAG_MOVE_KOLOBOK_X=true;
             stuk->play();
         }
-        if(kol_y>desktop_height)
+        if(kol_y>=desktop_height)
         {
             FLAG_MOVE_KOLOBOK_Y=true;
             stuk->play();
@@ -470,12 +469,12 @@ void Lev_3_Window::move_kolobok()
     {
         kol_x = kol_x-2;
         kol_y = kol_y-2;
-        if(kol_x<0)
+        if(kol_x<=0)
         {
             FLAG_MOVE_KOLOBOK_X=false;
             stuk->play();
         }
-        if(kol_y<0)
+        if(kol_y<=0)
         {
             FLAG_MOVE_KOLOBOK_Y=false;
             stuk->play();
@@ -485,12 +484,12 @@ void Lev_3_Window::move_kolobok()
     {
         kol_x = kol_x+2;
         kol_y = kol_y-2;
-        if(kol_x>desktop_width)
+        if(kol_x>=desktop_width)
         {
             FLAG_MOVE_KOLOBOK_X=true;
             stuk->play();
         }
-        if(kol_y<0)
+        if(kol_y<=0)
         {
             FLAG_MOVE_KOLOBOK_Y=false;
             stuk->play();
@@ -500,16 +499,16 @@ void Lev_3_Window::move_kolobok()
     {
         kol_x = kol_x-2;
         kol_y = kol_y+2;
-        if(kol_x<0)
+        if(kol_x<=0)
         {
             FLAG_MOVE_KOLOBOK_X=false;
             stuk->play();
         }
-        if(kol_y>desktop_height)
+        if(kol_y>=desktop_height)
         {
             FLAG_MOVE_KOLOBOK_Y=true;
             stuk->play();
         }
     }
-    Produkt[7]->move(kol_x, kol_y);
+        Produkt[7]->move(kol_x, kol_y);
 }

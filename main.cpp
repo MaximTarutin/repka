@@ -9,4 +9,3 @@ int main(int argc, char *argv[])
     w.showFullScreen();
     return a.exec();
 }
-

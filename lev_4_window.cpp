@@ -37,7 +37,7 @@ Lev_4_Window::Lev_4_Window(QWidget *parent) : QMainWindow(parent)
     Mysl->move(Masha->x()+Masha->width()/2, Masha->y()-Masha->height()/2);
     Mysl->show();
 
-    Pen[0] = new Static_Object("",0,0,this);
+    Pen[0] = new Static_Object("2",0,0,this);
     Pen[1] = new Static_Object(":res4/karandash-1.png",100,100,this);
     Pen[2] = new Static_Object(":res4/karandash-2.png",100,100,this);
     Pen[3] = new Static_Object(":res4/karandash-3.png",100,100,this);
@@ -46,7 +46,7 @@ Lev_4_Window::Lev_4_Window(QWidget *parent) : QMainWindow(parent)
     Pen[6] = new Static_Object(":res4/karandash-6.png",100,100,this);
     Pen[7] = new Static_Object(":res4/karandash-7.png",100,100,this);
 
-    Mysl_Object[0] = new Static_Object("", 0, 0, this);
+    Mysl_Object[0] = new Static_Object("1", 0, 0, this);
     Mysl_Object[1] = new Static_Object(":/res4/lico.png", 100, 100, this);
     Mysl_Object[2] = new Static_Object(":/res4/platok.png", 100, 100, this);
     Mysl_Object[3] = new Static_Object(":/res4/volosy.png", 100, 100, this);
@@ -54,6 +54,10 @@ Lev_4_Window::Lev_4_Window(QWidget *parent) : QMainWindow(parent)
     Mysl_Object[5] = new Static_Object(":/res4/korzina.png", 100, 100, this);
     Mysl_Object[6] = new Static_Object(":/res4/platie.png", 100, 100, this);
     Mysl_Object[7] = new Static_Object(":/res4/sapogi.png", 100, 100, this);
+
+    Holst   = new Static_Object(":/res4/holst.png", 800,800, this);
+    Holst->move(desktop_width-Holst->width(), desktop_height-Holst->height());
+    Holst->show();
 
     Vnuchka[0] = new Static_Object(":/res4/vnuchka.png", 350, 350, Holst);
     Vnuchka[1] = new Static_Object(":/res4/vnuchka-1.png", 350, 350, Holst);
@@ -64,9 +68,7 @@ Lev_4_Window::Lev_4_Window(QWidget *parent) : QMainWindow(parent)
     Vnuchka[6] = new Static_Object(":/res4/vnuchka-6.png", 350, 350, Holst);
     Vnuchka[7] = new Static_Object(":/res4/vnuchka-7.png", 350, 350, Holst);
 
-    Holst   = new Static_Object(":/res4/holst.png", 800,800, this);
-    Holst->move(desktop_width-Holst->width(), desktop_height-Holst->height());
-    Holst->show();
+
 
     for(int i=0; i<8; ++i)
     {

@@ -15,7 +15,7 @@ Static_Object::Static_Object(QString str, QWidget *parent)
 }
 
 Static_Object::Static_Object(QString str, int a, int b, QWidget *parent)
-    : QLabel(parent), width_object(a), height_object(b), path_to_image(str)
+     : QLabel(parent), width_object(a), height_object(b), path_to_image(str)
 {
     resize(width_object, height_object);
     QPixmap pic(str);

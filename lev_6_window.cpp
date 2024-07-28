@@ -35,33 +35,10 @@ Lev_6_Window::Lev_6_Window(QWidget *parent) : QMainWindow(parent)
     for(int i=0; i<16; ++i)
     {
         Plitka_fon[i] = new Static_Object(":/res6/plitka.jpg", 200, 200, this);
-        // Plitka_fon[i].setParent(this);
-        // Plitka_fon[i].resize_obj(200,200);
-        // Plitka_fon[i].pic_obj(":/res6/plitka.jpg");
         Plitka_fon[i]->raise();
         Plitka_fon[i]->show();
-        // Plitka[i].setParent(this);
-        // Plitka[i].resize_obj(200,200);
-        // Plitka[i].hide();
         FLAG_PLITKA[i]=false;
     }
-
-    // Plitka[0].pic_obj(":/res6/dedka.png");
-    // Plitka[1].pic_obj(":/res6/dedka.png");
-    // Plitka[2].pic_obj(":/res6/babka.png");
-    // Plitka[3].pic_obj(":/res6/babka.png");
-    // Plitka[4].pic_obj(":/res6/vnuchka.png");
-    // Plitka[5].pic_obj(":/res6/vnuchka.png");
-    // Plitka[6].pic_obj(":/res6/zuchka.png");
-    // Plitka[7].pic_obj(":/res6/zuchka.png");
-    // Plitka[8].pic_obj(":/res6/koshka.png");
-    // Plitka[9].pic_obj(":/res6/koshka.png");
-    // Plitka[10].pic_obj(":/res6/myshka.png");
-    // Plitka[11].pic_obj(":/res6/myshka.png");
-    // Plitka[12].pic_obj(":/res6/repka.png");
-    // Plitka[13].pic_obj(":/res6/repka.png");
-    // Plitka[14].pic_obj(":/res6/tomat.png");
-    // Plitka[15].pic_obj(":/res6/tomat.png");
 
     Plitka[0] = new Static_Object(":/res6/dedka.png", 200, 200, this);
     Plitka[0]->hide();
